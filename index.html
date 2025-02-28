@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click Frenzy Game</title>
+    <title>CAN YOU BE A SPONGIUS</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -17,9 +17,28 @@
             <img src="" alt="target" class="click-target" id="target">
         </div>
         
-        <button class="start-btn" id="startBtn">Start Game!</button>
+        <button class="start-btn" id="startBtn">LEts Go!</button>
         <div class="game-over" id="gameOver"></div>
     </div>
+
+    <!-- Popout untuk skor >= 150 -->
+    <div class="popout" id="spongiusPopout">
+        <div class="popout-content">
+            <span class="close-btn" id="closeSpongius">&times;</span>
+            <img src="./images/spongius.jpg" alt="Spongius" class="popout-image">
+            <div class="celebration">YOU'RE SPONGIUS!!!</div>
+        </div>
+    </div>
+
+    <!-- Popout untuk skor < 150 -->
+    <div class="popout" id="bingusPopout">
+        <div class="popout-content">
+            <span class="close-btn" id="closeBingus">&times;</span>
+            <img src="./images/bingus.jpg" alt="Bingus" class="popout-image">
+            <div class="celebration">YOU'RE BINGUS HUUUU</div>
+        </div>
+    </div>
+
     <script src="./script.js"></script>
 </body>
 </html>
