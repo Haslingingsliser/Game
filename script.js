@@ -8,6 +8,7 @@ const spongiusPopout = document.getElementById('spongiusPopout');
 const bingusPopout = document.getElementById('bingusPopout');
 const closeSpongius = document.getElementById('closeSpongius');
 const closeBingus = document.getElementById('closeBingus');
+const bgMusic = document.getElementById('bgMusic');
 
 let score = 0;
 let timeLeft = 60;
@@ -25,6 +26,13 @@ const preloadImages = () => {
     });
 };
 preloadImages();
+
+// Fungsi untuk memutar musik background
+function startMusic() {
+    bgMusic.play().catch(error => {
+        console.log('Autoplay diblokir, perlu interaksi pengguna');
+    });
+}
 
 // Fungsi untuk mendapatkan posisi acak di dalam area klik
 function getRandomPosition(element) {
@@ -71,6 +79,9 @@ function startGame() {
     
     // Tampilkan gambar pertama
     changeImage();
+    
+    // Mulai musik background
+    startMusic();
     
     // Mulai timer
     timerId = setInterval(() => {
@@ -144,4 +155,15 @@ closeSpongius.addEventListener('click', () => {
 });
 closeBingus.addEventListener('click', () => {
     bingusPopout.style.display = 'none';
+});
+
+// Coba memutar musik saat halaman dimuat
+document.addEventListener('DOMContentLoaded', () => {
+    // Mute sementara untuk bypass autoplay policy
+    bgMusic.muted = true;
+    bgMusic.play().then(() => {
+        bgMusic.muted = false;
+    }).catch(error => {
+        console.log('Autoplay diblokir');
+    });
 });
