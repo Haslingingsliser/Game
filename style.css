@@ -166,3 +166,8 @@ body {
 .shake {
     animation: shake 0.5s;
 }
+
+/* Sembunyikan audio controls */
+audio {
+    display: none;
+}
