@@ -109,6 +109,7 @@ function showSpongiusPopout() {
 // Fungsi untuk menampilkan popout Bingus
 function showBingusPopout() {
     bingusPopout.style.display = 'flex';
+    bingusPopout.querySelector('.popout-content').classList.add('shake');
 }
 
 // Fungsi untuk membuat efek rumbai-rumbai
