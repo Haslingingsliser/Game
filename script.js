@@ -10,7 +10,7 @@ let timeLeft = 60;
 let gameActive = false;
 let timerId = null;
 
-// Path gambar relatif ke folder images (sekarang di root)
+// Path gambar relatif ke folder images
 const images = ['./images/bingus.jpg', './images/spongius.jpg'];
 
 // Preload images untuk menghindari delay saat pertama kali muncul
@@ -61,6 +61,9 @@ function startGame() {
     timeElement.textContent = timeLeft;
     gameOverElement.style.display = 'none';
     startBtn.disabled = true;
+    
+    // Reset tampilan target
+    target.style.display = "block";
     
     // Tampilkan gambar pertama
     changeImage();
