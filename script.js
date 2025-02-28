@@ -10,7 +10,7 @@ let timeLeft = 60;
 let gameActive = false;
 let timerId = null;
 
-// Path gambar relatif ke folder images
+// Path gambar relatif ke folder images (sekarang di root)
 const images = ['./images/bingus.jpg', './images/spongius.jpg'];
 
 // Preload images untuk menghindari delay saat pertama kali muncul
