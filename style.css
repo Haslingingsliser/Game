@@ -52,7 +52,7 @@ body {
     transition: all 0.3s ease;
     border-radius: 15px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    display: block; /* Pastikan gambar selalu muncul */
+    display: block;
 }
 
 .click-target:hover {
@@ -83,8 +83,73 @@ body {
     display: none;
 }
 
-@keyframes clickEffect {
-    0% { transform: scale(1); }
-    50% { transform: scale(0.9); }
+/* Popout Styling */
+.popout {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popout-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    animation: popoutAnimation 0.5s ease;
+}
+
+.popout-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
+
+.celebration {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 1rem;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #e74c3c;
+}
+
+.close-btn:hover {
+    color: #c0392b;
+}
+
+/* Animasi Popout */
+@keyframes popoutAnimation {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.1); }
     100% { transform: scale(1); }
+}
+
+/* Efek Rumbai-rumbai */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: #ff4757;
+    animation: confettiAnimation 2s ease-out;
+}
+
+@keyframes confettiAnimation {
+    0% { transform: translateY(0) rotate(0); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
 }
