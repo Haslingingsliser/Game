@@ -80,6 +80,9 @@ function startGame() {
     // Tampilkan gambar pertama
     changeImage();
     
+    // Mulai musik
+    startMusic();
+    
     // Mulai timer
     timerId = setInterval(() => {
         timeLeft--;
