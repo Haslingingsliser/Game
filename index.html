@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bingus or Spongius</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Click Frenzy Game</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="game-container">
-        <div class="score-board">Score: <span id="score">0</span></div>
-        <div class="timer">Time: <span id="time">30</span>s</div>
-        <div class="target" id="target"></div>
-        <button class="start-btn" id="startBtn">Start Game</button>
-        <div class="game-over" id="gameOver">Game Over!</div>
+        <div class="game-header">
+            <div class="timer">Time: <span id="time">60</span>s</div>
+            <div class="score">Score: <span id="score">0</span></div>
+        </div>
+        
+        <div class="click-area" id="clickArea">
+            <img src="" alt="target" class="click-target" id="target">
+        </div>
+        
+        <button class="start-btn" id="startBtn">Start Game!</button>
+        <div class="game-over" id="gameOver"></div>
     </div>
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
