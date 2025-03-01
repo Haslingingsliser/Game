@@ -25,6 +25,13 @@ body {
     max-width: 600px;
 }
 
+.game-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #00ff88;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
 .game-header {
     display: flex;
     justify-content: space-between;
@@ -81,6 +88,90 @@ body {
     color: #e74c3c;
     margin-top: 1rem;
     display: none;
+}
+
+/* Popout Styling */
+.popout {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popout-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    animation: popoutAnimation 0.5s ease;
+}
+
+.popout-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
+
+.celebration {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 1rem;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #e74c3c;
+}
+
+.close-btn:hover {
+    color: #c0392b;
+}
+
+/* Animasi Popout */
+@keyframes popoutAnimation {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Efek Rumbai-rumbai */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: #ff4757;
+    animation: confettiAnimation 2s ease-out;
+}
+
+@keyframes confettiAnimation {
+    0% { transform: translateY(0) rotate(0); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+/* Efek gemetar untuk skor rendah */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.5s;
 }
 
 /* Sembunyikan audio controls */
