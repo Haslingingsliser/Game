@@ -91,6 +91,7 @@ body {
 }
 
 /* Popout Styling */
+/* Popout Styling */
 .popout {
     display: none;
     position: fixed;
@@ -134,13 +135,19 @@ body {
     font-size: 2rem;
     cursor: pointer;
     color: #e74c3c;
+    background: none; /* Pastikan tidak ada background */
+    border: none; /* Hilangkan border */
+    outline: none; /* Hilangkan outline */
+    padding: 0; /* Hilangkan padding default */
 }
 
 .close-btn:hover {
-    color: #c0392b;
-}
-
-/* Animasi Popout */
+    color: #c0392b; /* Warna saat hover */
+    background: none; /* Pastikan tidak ada background saat hover */
+    border: none; /* Hilangkan border saat hover */
+    outline: none;
+    
+}/* Animasi Popout */
 @keyframes popoutAnimation {
     0% { transform: scale(0); }
     50% { transform: scale(1.1); }
