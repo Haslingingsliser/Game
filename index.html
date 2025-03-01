@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPONGIUS OR BINGUS</title>
+    <title>YOU'RE BINGUS OR SPONGIUS</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="game-container">
+        <h1 class="game-title">YOU'RE BINGUS OR SPONGIUS</h1>
         <div class="game-header">
             <div class="timer">Time: <span id="time">60</span>s</div>
             <div class="score">Score: <span id="score">0</span></div>
@@ -19,6 +20,24 @@
         
         <button class="start-btn" id="startBtn">Start Game!</button>
         <div class="game-over" id="gameOver"></div>
+    </div>
+
+    <!-- Popout untuk skor >= 150 -->
+    <div class="popout" id="spongiusPopout">
+        <div class="popout-content">
+            <span class="close-btn" id="closeSpongius">&times;</span>
+            <img src="./images/spongius.jpg" alt="Spongius" class="popout-image">
+            <div class="celebration">YOU'RE SPONGIUS!!! 🎉</div>
+        </div>
+    </div>
+
+    <!-- Popout untuk skor < 150 -->
+    <div class="popout" id="bingusPopout">
+        <div class="popout-content">
+            <span class="close-btn" id="closeBingus">&times;</span>
+            <img src="./images/bingus.jpg" alt="Bingus" class="popout-image">
+            <div class="celebration">YOU'RE BINGUS HUUU 😿</div>
+        </div>
     </div>
 
     <!-- Audio untuk background music -->
