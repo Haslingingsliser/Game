@@ -4,6 +4,10 @@ const scoreElement = document.getElementById('score');
 const timeElement = document.getElementById('time');
 const gameOverElement = document.getElementById('gameOver');
 const clickArea = document.getElementById('clickArea');
+const spongiusPopout = document.getElementById('spongiusPopout');
+const bingusPopout = document.getElementById('bingusPopout');
+const closeSpongius = document.getElementById('closeSpongius');
+const closeBingus = document.getElementById('closeBingus');
 const bgMusic = document.getElementById('bgMusic');
 
 let score = 0;
@@ -102,6 +106,26 @@ function endGame() {
     gameOverElement.textContent = `Game Over! Final Score: ${score}`;
     gameOverElement.style.display = 'block';
     target.style.display = 'none';
+
+    // Tampilkan popout berdasarkan skor
+    if (score >= 150) {
+        spongiusPopout.style.display = 'flex';
+        createConfetti();
+    } else {
+        bingusPopout.style.display = 'flex';
+        bingusPopout.querySelector('.popout-content').classList.add('shake');
+    }
+}
+
+// Fungsi untuk membuat efek rumbai-rumbai
+function createConfetti() {
+    for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = `${Math.random() * 100}vw`;
+        confetti.style.animationDelay = `${Math.random() * 2}s`;
+        document.body.appendChild(confetti);
+    }
 }
 
 // Fungsi untuk menangani klik pada gambar
@@ -124,3 +148,9 @@ startBtn.addEventListener('click', () => {
     startGame(); // Mulai game
 });
 target.addEventListener('click', handleImageClick);
+closeSpongius.addEventListener('click', () => {
+    spongiusPopout.style.display = 'none';
+});
+closeBingus.addEventListener('click', () => {
+    bingusPopout.style.display = 'none';
+});
